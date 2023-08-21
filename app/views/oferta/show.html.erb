@@ -1,0 +1,18 @@
+<div class="container">
+  <%= render @ofertum %>
+  <div class="mt-3">
+    <% if current_user.role != "g0d" %>
+      <%= button_to "Solicitar Cargo", solicitar_ofertum_path(@ofertum), method: :post, data: { confirm: "¿Estás seguro?" }, class: "btn btn-warning" %>
+    <% end %>
+    <hr>
+    <% if current_user.role == "g0d" %>
+      <%= link_to "Editar esta oferta", edit_ofertum_path(@ofertum), class: "btn btn-primary me-2" %>
+    <% end %>
+    <%= link_to "Volver a la oferta", oferta_path, class: "btn btn-secondary me-2" %>
+    <br>
+    <br>
+    <% if current_user.role == "g0d" %>
+      <%= button_to "Eliminar esta oferta", @ofertum, method: :delete, data: { confirm: "¿Estás seguro?" }, class: "btn btn-danger" %>
+    <% end %>
+  </div>
+</div>

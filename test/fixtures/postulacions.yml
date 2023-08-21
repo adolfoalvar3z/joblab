@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  oferta: one
+  estado: MyString
+  resultado: MyString
+
+two:
+  user: two
+  oferta: two
+  estado: MyString
+  resultado: MyString

@@ -1,0 +1,31 @@
+<%= form_with(model: ofertum, class: 'card p-3') do |form| %>
+  <% if ofertum.errors.any? %>
+    <div class="alert alert-danger">
+      <h2><%= pluralize(ofertum.errors.count, "error") %> prohibió guardar esta oferta:</h2>
+      <ul>
+        <% ofertum.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="mb-3">
+    <%= form.label :cargo, class: "form-label" %>
+    <%= form.text_field :cargo, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :descripcion, class: "form-label" %>
+    <%= form.text_area :descripcion, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :rango, class: "form-label" %>
+    <%= form.text_field :rango, class: "form-control" %>
+  </div>
+  <div class="mb-3">
+    <%= form.label :estado, class: "form-label" %>
+    <%= form.select :estado, ['abierto', 'cerrado'],{}, class: "form-select" %>
+  </div>
+  <div class="d-grid">
+    <%= form.submit "Guardar oferta", class: "btn btn-primary" %>
+  </div>
+<% end %>

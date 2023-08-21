@@ -1,0 +1,28 @@
+<!-- app/views/users/index.html.erb -->
+<div class="container mt-5">
+  <h2>Lista de Usuarios</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Email</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td><%= user.id %></td>
+          <td><%= user.nombre %></td>
+          <td><%= user.email %></td>
+          <td>
+            <%= link_to 'Editar', edit_user_path(user), class: 'btn btn-primary btn-sm' %>
+            <%= link_to 'Eliminar', user_path(user), method: :delete, data: { confirm: '¿Estás seguro?' }, class: 'btn btn-danger btn-sm' %>
+          </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= link_to 'Crear Usuario', new_user_path, class: 'btn btn-success' %>
+</div>

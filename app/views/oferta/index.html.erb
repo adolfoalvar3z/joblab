@@ -1,0 +1,37 @@
+<div class="container">
+  <p class="text-success"><%= notice %></p>
+  <h1 class="mb-4">Ofertas</h1>
+
+  <% if current_user.role == "g0d" %>
+  <%= link_to "Nueva Oferta", new_ofertum_path, class: "btn btn-success my-3" %>
+  <% end %>
+
+  <div id="oferta">
+    <div class="table-responsive">
+      <table class="table table-warning">
+        <thead>
+          <tr>
+            <th scope="col">Código Cargo</th>
+            <th scope="col">Cargo</th>
+            <th scope="col">Descripción</th>
+            <th scope="col">Rango Salarial</th>
+            <th scope="col">Fecha de Publicación</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @oferta.each do |ofertum| %>
+            <tr class="<%= ofertum.estado == 'cerrado' ? 'table-danger' : '' %>">
+              <td> <%= ofertum.id %> </td>
+              <td> <%= ofertum.cargo %> </td>
+              <td> <%= ofertum.descripcion %> </td>
+              <td> <%= ofertum.rango %> </td>
+              <td class="small"><%= ofertum.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
+              <td><%= link_to "Ver esta Oferta", ofertum, class: "btn btn-primary btn-sm" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

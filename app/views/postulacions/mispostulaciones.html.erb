@@ -1,0 +1,27 @@
+<h1>Mis Postulaciones</h1>
+<div class="table-responsive">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Código Cargo</th>
+        <th scope="col">Cargo</th>
+        <th scope="col">Descripción</th>
+        <th scope="col">Rango Salarial</th>
+        <th scope="col">Fecha de postulación</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @postulaciones.each do |postulado| %>
+        <tr class="<%= postulado.oferta.estado == 'abierto' ? 'table-success' : 'table-danger' %>">
+          <td> <%= postulado.oferta.id %> </td>
+          <td> <%= postulado.oferta.cargo %> </td>
+          <td> <%= postulado.oferta.descripcion %> </td>
+          <td> <%= postulado.oferta.rango %> </td>
+          <td class="small"><%= postulado.created_at.strftime("%d-%m-%Y %H:%M:%S") %></td>
+          <td><%= link_to "Ver esta Oferta", postulado, class: "btn btn-primary btn-sm" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>

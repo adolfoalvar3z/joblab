@@ -1,0 +1,30 @@
+<div class="container">
+  <h1 class="text-center">Postulaciones</h1>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Cargo</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @postulacions_grouped.each do |id, postulaciones| %>
+        <tr>
+          <td colspan="3">
+            <h4>Postulaciones de <%= postulaciones[0].oferta.cargo %></h4>
+          </td>
+        </tr>
+        <% postulaciones.each do |postulacion| %>
+          <tr>
+            <td><%= postulacion.user.nombre %></td>
+            <td><%= postulacion.oferta.cargo %></td>
+            <td>
+              <%= link_to "Mostrar esta postulación", postulacion, class: "btn btn-primary" %>
+            </td>
+          </tr>
+        <% end %>
+      <% end %>
+    </tbody>
+  </table>
+</div>
