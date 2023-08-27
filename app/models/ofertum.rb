@@ -1,4 +1,3 @@
 class Ofertum < ApplicationRecord
-  has_many :postulacion
-
+  has_many :postulacion, dependent: :destroy
 end

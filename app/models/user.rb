@@ -14,5 +14,5 @@ class User < ApplicationRecord
     nombre.blank? ? email : nombre
   end
 
-  has_many :postulacion
+  has_many :postulacion, dependent: :destroy
 end

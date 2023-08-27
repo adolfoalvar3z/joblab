@@ -4,8 +4,10 @@ one:
   cargo: MyString
   descripcion: MyText
   rango: MyString
+  estado: MyString
 
 two:
   cargo: MyString
   descripcion: MyText
   rango: MyString
+  estado: MyString

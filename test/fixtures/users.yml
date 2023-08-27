@@ -4,8 +4,25 @@
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
 #
-one: {}
+one:
 # column: value
+  email: adolfo.alvarez@pjud.cl
+  encrypted_password: 123456
+  nombre: Juan Valdez
+  telefono: +56978483530
+  direccion: 'sucasa'
+  cargo: Weon de informatica
+  bio: pulentoso
+  role: usuario
+
 #
-two: {}
+two:
 # column: value
+  email: esteban@joblab.cl
+  encrypted_password: 123456
+  nombre: Juan Valdez
+  telefono: +56978483530
+  direccion: sucasa
+  cargo: Weon de informatica
+  bio: pulentoso
+  role: g0d
